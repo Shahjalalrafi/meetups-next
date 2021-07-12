@@ -3,7 +3,10 @@ import { MongoClient } from "mongodb"
 async function handler(req, res) {
     if(req.method === 'POST') {
         const data = req.body
-        const client = await MongoClient.connect(`mongodb+srv://myTodos:rafi1234@cluster0.fltsf.mongodb.net/meetups?retryWrites=true&w=majority`)
+        const client = await MongoClient.connect(`mongodb+srv://myTodos:rafi1234@cluster0.fltsf.mongodb.net/meetups?retryWrites=true&w=majority`,{
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+          })
         const db = client.db()
         const meetupCollection = db.collection('meetups')
 
