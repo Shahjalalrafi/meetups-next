@@ -17,9 +17,7 @@ const DUMMY_DATA = [
   },
 ]
 
-export default function Home(props) {
-  // console.log(props.meetups)
-  
+export default function Home(props) {  
   return (
       <MeetupList meetups={props.meetups} />
   )
